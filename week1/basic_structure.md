@@ -1,9 +1,10 @@
 # Basic Struture
 ## Primitive data types
 > integer, real number, boolean value, characters\
-> byte: 8 bits; char, short: 16 bits; int: 32 bits; long: 64 bits\
+> byte: 8 bits; short: 16 bits; int: 32 bits; long: 64 bits\
 > float: 32 bits; double: 64 bits\
-> boolean: 8 bits
+> boolean: 8 bits\
+> char: 16 bits
 ## Statements
 ### Declaration
 > create variables\
@@ -48,6 +49,17 @@ double[] a = new double[N]; #initializaiton all element = 0.0
 int[] a = {numbers};
 ```
 ## Static methods
+> functions actually
+### Defining
+```
+public static double sqrt(double c){
+    <body block statements>
+    return x;
+}
+```
+> first line is signature, it contains return type, method name and argument(type + varaible)\
+### invoking
+
 ## Strings
 ## Input/output
 ## Data abstration
