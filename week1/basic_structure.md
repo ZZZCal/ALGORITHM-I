@@ -27,13 +27,13 @@ while(<boolean expression>){<block statements>}
     
 for(<initialize>; <boolean expression>; <increment>){<block statements>}
 ```
-> break: immediately exits the loop
+> break: immediately exits the loop\
 > continue: begins the next interation of the loop
 ### Call
 > invoke other methods\
 > expamle: ```int key = StdIn.readInt();```
 ### Return
-> return from a method
+> return from a method\
 > example: ```return false```
 ## Arrays
 ### Create an array
