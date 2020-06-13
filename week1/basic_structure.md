@@ -58,8 +58,29 @@ public static double sqrt(double c){
 }
 ```
 > first line is signature, it contains return type, method name and argument(type + varaible)\
-### invoking
-
+### Invoking
+### Recursion
+> A method calls itself 
 ## Strings
+> A sequence of char values\
+> Not a primitive type, but considered a fundamental daya type(So < and > can't be operated between Strings)
+### Concatenation
+> built-in operator(+) for String
+```
+"Hi, " + "Bob " 
+```
+### Conversion
+> conversion with integer/double
+```
+public class Integer
+    static int parseInt(String s)
+    static String toString(int i)
+```
+> replace int with double
+> if one of the arguments of + is a String, other arguments will be converted to String.
 ## Input/output
-## Data abstration
+### Standard output & formatted output
+### Standard input
+### Input and output from a file
+### Standard drawing
+> line, point, text, circle, filled etc.
