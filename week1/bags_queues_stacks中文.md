@@ -203,10 +203,28 @@ for (Node x = first; x! = null; x = x.next){
 ```
 
 ### 队列的实现
-> 
+> 将队列表示为一条从最早插入的元素到最近插入的元素的链表，实例变量last指向队列的结尾\
+> 元素入列(enqueue())，将它添加到表尾\
+> 元素出列(dequeue())，删除表头的结点(代码和Stack的pop()相同，但链表为空时，需要更新last的值)\
+> size()和isEmpty()的实现都和Stack相同\
+> 也使用泛型参数Item\
 
+> 链表是数组的一种重要的替代方式！！
 
-
+### 背包的实现
+> 只需要将Stack中的push()改成add()，并去掉pop()功能即可
+> 要在集合数据类型实现迭代，必须添加代码
+```
+// 引用java的Iterator接口
+import java.util.Iterator;
+// 类必然会提供一个Iterator()方法
+implements Iterable<Item>
+// Iterator()方法本身只是简单地从实现了Iterator接口的类中返回一个对象
+// 下列代码保证了类必然会实现方法hasNext(), next(), remove()和foreach语句
+public Iterator<Item> iiterator(){
+	return new listIterator();
+}
+```
 
 
 
