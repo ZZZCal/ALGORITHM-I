@@ -87,9 +87,28 @@ Public class Reserve{
 
 ## 算数表达式求值(Arithmetic expression evaluation)
 > 一个使用栈(stack)的用例\
-> 思想阐述\
+> 此处为双栈运用(操作数栈 + 操作符栈)
+> 思想阐述
 >> 将操作数压入操作数栈\
 >> 将运算符压入运算符栈\
->> 忽略左括号
+>> 忽略左括号\
 >> 在遇到右括号时，弹出一个运算符，弹出所需数量的操作数，并将运算符和操作数的运算结果压入操作数栈\
-> 此处为双栈运用(操作数栈 + 操作符栈)
+>> 每次操作符只对两个数进行运算
+
+# 集合类数据类型的实现
+## 定容栈(Fixed-capacity stack)
+## 泛型(generics)
+> 使用Item类
+```
+public class FixedCapacityStack<Item>
+```
+> 这个声明体现了Item这个类型参数(type parameter)\
+> 声明使用Item相当于一个象征性的占位符，后面再决定使用什么类型，这样我们就可以使用这个栈处理任意数据类型，但必须是引用类型\
+> 我们可以依靠自动装箱将原始转换为相应的封装类型\
+> 注意，在java中不能创建泛型数组，必须使用类型转换\
+```
+a = new Item[cap]; //This is wrong!!!
+a = (Item[]) new Object[cap]; //Right declare
+```
+## 调整数组的大小
+## 泛型(generics)类型
