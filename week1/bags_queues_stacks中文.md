@@ -176,5 +176,15 @@ oldlast.next = last;
 
 ### 遍历(Traversal)
 > 将循环的索引变量x初始化为链表的首结点\
-> 通过x.item访问和
+> 通过x.item访问和x相关联的元素，并将x设为x.next来访问链表中的下一个结点\
+> 直到x为null为止
+```
+for (Node x = first; x! = null; x = x.next){
+  // 处理x.item
+}
+```
+
+### 栈的实现
+> 栈的API实现即：
+> 将栈保存为一条链表
 ## 泛型(generics)类型
