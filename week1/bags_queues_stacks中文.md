@@ -111,4 +111,70 @@ a = new Item[cap]; //This is wrong!!!
 a = (Item[]) new Object[cap]; //Right declare
 ```
 ## 调整数组的大小
+> 使用数组表示栈意味着client必须预先估计栈的最大容量\
+> Java中数组一旦创立则大小无法改变，因此栈使用的空间只能是这个最大容量的一部分\
+> 集合如果比数组还大那么有可能会溢出(overflow)\
+> 定义一个resize()方法，可以将栈移动到不同大小的数组当中\
+
+> 在push()方法前需检查栈是否已满，使用isFull()方法
+>> 现在在push()中检查，通过检查栈大小N和数组大小a.length是否相等。如果数组太小则将数组长度加倍，然后使用a[N++] = item插入新元素
+
+> 在pop()中，首先删除栈顶的元素，也要检测数组是否太大
+>> 检测条件为栈大小是否小于数组的1/4，如果小于则将数组大小减半，保持数组约为半满状态\
+>> 同时也要防止空数组导致对象游离\
+>> 这种情况下栈永远不会溢出也不会使用率低于1/4
+
+## 对象游离(loitering)
+> Java的垃圾回收：回收所有无法被访问的对象的内存\
+>> pop()中被弹出的元素仍处于数组中，但实际上已经是一个孤儿(orphan)了，它不会被访问了，但是数组中的引用仍存在，成为游离\
+>> 避免游离只需要将被弹出的元素值设为null即可，这样引用会被一直覆盖，然后前面一个元素被回收\
+
+## 迭代(Iteration)
+> 集合类数据类型的基本操作之一，就是能够使用foreach语句通过迭代遍历并处理集合中的每个元素\
+> 集合类数据类型中我们必须要实现：
+>> 实现一个iterator()方法并返回一个Iterator对象\
+>> Iterator类必须包括两个方法：hasNext()--返回一个布尔值 和 next()--返回集合中的一个泛型元素C
+
+# 链表(Linked lists)
+> 定义：是一种递归的数据结构。它或者为空，或者是指向一个结点(node)的引用。该节点还有一个泛型的元素和一个指向另一条链表的引用。
+
+## 结点记录
+```
+private class Node{
+  Item item;
+  Node next;
+}
+```
+
+## 构造链表
+> 链表表示的是一列元素，类似于数组，但是每一个元素都是一个结点
+
+### 表头插入结点
+> 将first保存在oldfirst中\
+> 将新node赋予first\
+> 将first的item域设为新值，next域指向oldfirst\
+```
+Node oldfirst = first;
+first = new Node();
+first.item = "not";
+first.next = oldfirst;
+```
+
+###在表头删除结点
+```
+first = first.next;
+```
+> 注意，只有一个赋值语句，因为一旦改变了first的值，再也无法访问曾经的结点了，曾经的结点变成了一个孤儿
+
+### 在表尾插入结点
+```
+Node oldlast = last;
+last = new Node();
+last.item = "not";
+oldlast.next = last;
+```
+
+### 遍历(Traversal)
+> 将循环的索引变量x初始化为链表的首结点\
+> 通过x.item访问和
 ## 泛型(generics)类型
