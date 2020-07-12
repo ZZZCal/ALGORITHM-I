@@ -1,15 +1,17 @@
+## week 1 assignment
+> task description [https://coursera.cs.princeton.edu/algs4/assignments/percolation/specification.php]
+
 ## Percolation
 
-+ `PercolationStats.java`中的`main()`输出格式有误-----
 + `backwash`当`bottom`和最后一行联结时,和`bottom`联结的白色点(非`full`)会在`union`后被判定为`full`,使用两个`WeightedQuickUnionUF`时,`memory`中的`test2(bonus)`无法通过
 
 `Percolation.java`
 
 ```java
 /* *****************************************************************************
- *  Name:              Alan Turing
- *  Coursera User ID:  123456
- *  Last modified:     1/1/2019
+ *  Name:             
+ *  Coursera User ID:  
+ *  Last modified:     
  **************************************************************************** */
 
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
@@ -119,9 +121,9 @@ public class Percolation {
 
 ```java
 /* *****************************************************************************
- *  Name:              Alan Turing
- *  Coursera User ID:  123456
- *  Last modified:     1/1/2019
+ *  Name:              
+ *  Coursera User ID:  
+ *  Last modified:     
  **************************************************************************** */
 
 import edu.princeton.cs.algs4.StdOut;
@@ -179,9 +181,10 @@ public class PercolationStats {
         int n = Integer.parseInt(args[0]);
         int trials = Integer.parseInt(args[1]);
         PercolationStats stats = new PercolationStats(n, trials);
-        StdOut.println("mean() = <" + stats.mean() + ">");
-        StdOut.println("stddev() = <" + stats.stddev() + ">");
-        StdOut.println("95% confidence interval = [<" + stats.confidenceLo() + ">, <" + stats.confidenceHi() + ">]");
+        StdOut.println("mean                    = " + stats.mean());
+        StdOut.println("stddev                  = " + stats.stddev());
+        StdOut.println("95% confidence interval = [" + stats.confidenceLo() + ", "
+                               + percolationStats.confidenceHi() + "]");
     }
 
 }
